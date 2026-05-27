@@ -82,7 +82,7 @@
     "memory": "2048",
     "registeredAt": "2026-05-27T14:29:38.900Z",
     "registeredBy": "arn:aws:iam::368740523992:root",
-    "enableFaultInjection": false,
+    "enableFaultInjection": true,
     "tags": [
         {
             "key": "Name",
