@@ -19,15 +19,6 @@ jobs:
           distribution: temurin
           java-version: "21"
 
-      # Cache Maven Dependencies
-      - name: Cache Maven Packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-m2
-
       # Run Tests
       - name: Maven Test
         run: mvn test
