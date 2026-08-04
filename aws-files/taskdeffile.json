@@ -1,86 +1,89 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:368740523992:task-definition/vproappgithub-task-def:2",
-  "containerDefinitions": [
-    {
-      "name": "vproapp",
-      "image": "368740523992.dkr.ecr.eu-north-1.amazonaws.com/vproapp",
-      "cpu": 0,
-      "portMappings": [
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:716657688884:task-definition/vproapp-act-tdef:1",
+    "containerDefinitions": [
         {
-          "containerPort": 8080,
-          "hostPort": 8080,
-          "protocol": "tcp",
-          "name": "vproapp-8080-tcp",
-          "appProtocol": "http"
+            "name": "vproapp",
+            "image": "716657688884.dkr.ecr.us-east-2.amazonaws.com/actapp",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "vproapp-8080-tcp",
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/vproapp-act-tdef",
+                    "awslogs-region": "us-east-2",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
         }
-      ],
-      "essential": true,
-      "environment": [],
-      "environmentFiles": [],
-      "mountPoints": [],
-      "volumesFrom": [],
-      "ulimits": [],
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "/ecs/vproappgithub-task-def",
-          "awslogs-create-group": "true",
-          "awslogs-region": "eu-north-1",
-          "awslogs-stream-prefix": "ecs"
+    ],
+    "family": "vproapp-act-tdef",
+    "executionRoleArn": "arn:aws:iam::716657688884:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
         },
-        "secretOptions": []
-      },
-      "systemControls": []
-    }
-  ],
-  "family": "vproappgithub-task-def",
-  "executionRoleArn": "arn:aws:iam::368740523992:role/ecsTaskExecutionRole",
-  "networkMode": "awsvpc",
-  "revision": 2,
-  "volumes": [],
-  "status": "ACTIVE",
-  "requiresAttributes": [
-    {
-      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "2048",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
     },
-    {
-      "name": "ecs.capability.execution-role-awslogs"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-    },
-    {
-      "name": "ecs.capability.execution-role-ecr-pull"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    },
-    {
-      "name": "ecs.capability.task-eni"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
-    }
-  ],
-  "placementConstraints": [],
-  "compatibilities": ["EC2", "MANAGED_INSTANCES", "FARGATE"],
-  "runtimePlatform": {
-    "cpuArchitecture": "X86_64",
-    "operatingSystemFamily": "LINUX"
-  },
-  "requiresCompatibilities": ["FARGATE"],
-  "cpu": "1024",
-  "memory": "2048",
-  "registeredAt": "2026-08-04T14:30:24.749Z",
-  "registeredBy": "arn:aws:iam::368740523992:user/udemy-admin",
-  "enableFaultInjection": false,
-  "tags": [
-    {
-      "key": "Name",
-      "value": "vproappgithub-task-def"
-    }
-  ]
+    "registeredAt": "2023-11-10T18:02:04.388Z",
+    "registeredBy": "arn:aws:iam::716657688884:root",
+    "tags": [
+        {
+            "key": "Name",
+            "value": "vproapp-act-tdef"
+        }
+    ]
 }
