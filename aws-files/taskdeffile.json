@@ -1,5 +1,5 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:368740523992:task-definition/vproappgithub-task-def:2",
+  "family": "vproappgithub-task-def",
   "containerDefinitions": [
     {
       "name": "vproapp",
@@ -33,50 +33,17 @@
       "systemControls": []
     }
   ],
-  "family": "vproappgithub-task-def",
   "executionRoleArn": "arn:aws:iam::368740523992:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 2,
   "volumes": [],
-  "status": "ACTIVE",
-  "requiresAttributes": [
-    {
-      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-    },
-    {
-      "name": "ecs.capability.execution-role-awslogs"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-    },
-    {
-      "name": "ecs.capability.execution-role-ecr-pull"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    },
-    {
-      "name": "ecs.capability.task-eni"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
-    }
-  ],
   "placementConstraints": [],
-  "compatibilities": ["EC2", "MANAGED_INSTANCES", "FARGATE"],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "requiresCompatibilities": ["FARGATE"],
-  "cpu": "1024",
-  "memory": "2048",
-  "registeredAt": "2026-08-04T14:30:24.749Z",
-  "registeredBy": "arn:aws:iam::368740523992:user/udemy-admin",
-  "enableFaultInjection": false,
   "tags": [
     {
       "key": "Name",
